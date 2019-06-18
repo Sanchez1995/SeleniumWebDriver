@@ -6,13 +6,10 @@ import org.openqa.selenium.WebDriver;
 import utilities.DriverUtilities;
 
 public class NavigationExample {
-    private static DriverUtilities myDriverUtilities;
     private static WebDriver driver;
-
     @BeforeClass
     public static void setup() {
-        myDriverUtilities = new DriverUtilities();
-        driver = myDriverUtilities.getDriver();
+        driver = DriverUtilities.getInstanceOfDriverUtilities().getDriver();
     }
     @AfterClass
     public static void teardown() {
