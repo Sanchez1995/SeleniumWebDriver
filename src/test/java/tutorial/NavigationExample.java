@@ -15,7 +15,6 @@ public class NavigationExample {
     public static void teardown() {
         driver.close();
     }
-
     @Test
     public void openWebBrowser(){
         driver.get("http://www.bbc.co.uk");
@@ -24,5 +23,4 @@ public class NavigationExample {
         driver.navigate().forward();
         driver.navigate().refresh();
     }
-
 }
