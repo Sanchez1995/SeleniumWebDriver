@@ -2,7 +2,9 @@ package tutorial;
 
 import org.junit.*;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import utilities.DriverUtilities;
 
 public class NavigationExample {
@@ -22,5 +24,13 @@ public class NavigationExample {
         driver.navigate().back();
         driver.navigate().forward();
         driver.navigate().refresh();
+    }
+    @Test
+    public void testPage(){
+        driver.get("http://newtours.demoaut.com/");
+        WebElement userNameField = driver.findElement(By.name("userName"));
+        WebElement body = driver.findElement(By.tagName("body"));
+        userNameField.sendKeys("Sanchez");
+        System.out.println("Element contents: " + userNameField.getAttribute("value") + body.findElement(By.name("userName")).getAttribute("value"));
     }
 }
